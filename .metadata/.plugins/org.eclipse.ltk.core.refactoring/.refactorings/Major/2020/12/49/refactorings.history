@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;env.majorProject.getCurrentTask(...)&apos; to &apos;gettaskCompleted&apos;&#x0D;&#x0A;- Original project: &apos;Major&apos;&#x0D;&#x0A;- Original element: &apos;env.majorProject.getCurrentTask(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;env.majorProject.gettaskCompleted(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;getCurrentTask&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;env{majorProject.java[majorProject~getCurrentTask~I~I" name="gettaskCompleted" references="true" stamp="1607188189824" version="1.0"/>
+</session>

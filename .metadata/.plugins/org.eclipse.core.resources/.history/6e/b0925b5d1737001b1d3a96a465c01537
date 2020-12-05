@@ -1,0 +1,83 @@
+package env;
+
+public class majorProject {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+System.out.println("----------------------------------------CREATE DATACENTER--------------------------------------------");
+		
+		Datacenter dc = new Datacenter(1);
+		
+		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("Datacenter 1 created successfully");
+		System.out.println();
+		System.out.println();
+	
+
+System.out.println("----------------------------------------CREATE HOST--------------------------------------------");
+		Host h1 = new Host(1);
+		
+		System.out.println("Host 1 created successfully");
+		System.out.println();
+
+		
+		Host h2 = new Host(2);
+		
+		System.out.println("Host 2 created successfully");
+		System.out.println();
+		System.out.println("Host 1 allocated to DC 1 successfully");
+		dc.allocateHost(h1);
+		System.out.println("Host 2 allocated to DC 2 successfully");
+		dc.allocateHost(h2);
+		
+
+System.out.println("----------------------------------------CREATE VM--------------------------------------------");
+		
+		Vm v1 = new Vm(1,10000,100,20, 0);
+
+		System.out.println("VM 1 created successfully");
+		Vm v2 = new Vm(1,10000,100,20, 0);
+
+		System.out.println("VM 2 created successfully");
+		Vm v3 = new Vm(1,10000,100,20, 0);
+		
+
+		System.out.println("VM 3 created successfully");
+		Vm v4 = new Vm(1,10000,100,20, 0);
+		
+
+		System.out.println("VM 4 created successfully");
+		Vm v5 = new Vm(1,10000,100,20, 0);
+		
+
+		System.out.println("VM 5 created successfully");
+		System.out.println();
+		
+		System.out.println("VM 1 allocated to Host 1 successfully");
+		h1.allocateVm(v1);
+		System.out.println("VM 2 allocated to Host 2 successfully");
+		h2.allocateVm(v2);
+		System.out.println("VM 3 allocated to Host 1 successfully");
+		h1.allocateVm(v3);
+		System.out.println("VM 4 allocated to Host 2 successfully");
+		h2.allocateVm(v4);
+		System.out.println("VM 5 allocated to Host 2 successfully");
+		h2.allocateVm(v5);
+		
+		
+		
+
+		
+		
+
+		
+		
+
+	}
+
+}

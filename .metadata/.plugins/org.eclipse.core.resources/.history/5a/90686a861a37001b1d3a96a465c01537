@@ -1,0 +1,111 @@
+package env;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+
+public class Vm {
+	
+
+	private int id;
+
+	private long size;
+
+	private double mips;
+
+	private int ram;
+	
+	protected Host host;
+	
+	protected List<Task> totalTasks;
+
+	public Vm(
+			int id,
+			double mips,
+			int ram,
+			long bw,
+			long size) {
+			setId(id);
+	
+		setMips(mips);
+	
+		setRam(ram);
+	
+		setSize(size);
+		
+	}
+	
+	
+
+
+	public List<Task> gettotalTasks() {
+		
+		return totalTasks;
+		
+		
+	}
+	protected void addTask()
+	{
+		
+	}
+	
+
+
+
+	
+	protected void setId(int id) {
+		this.id = id;
+	}
+
+
+	protected int getId() {
+		return this.id;
+	}
+
+	
+	
+	public double getMips() {
+		return mips;
+	}
+
+	
+	protected void setMips(double mips) {
+		this.mips = mips;
+	}
+
+
+
+	public int getRam() {
+		return ram;
+	}
+
+
+	public void setRam(int ram) {
+		this.ram = ram;
+	}
+
+
+	public long getSize() {
+		return size;
+	}
+
+	
+	
+	public void setSize(long size) {
+		this.size = size;
+	}
+	
+	
+
+
+	public Host getHost() {
+		return host;
+	}
+
+	
+	
+
+
+}

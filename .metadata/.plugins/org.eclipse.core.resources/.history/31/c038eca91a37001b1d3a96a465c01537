@@ -1,0 +1,222 @@
+package env;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+
+public class Task {
+	
+
+	private long taskLength;
+
+	private final int taskId;
+
+
+	private int status;
+	
+	private int index;
+
+	private double finishTime;
+
+	
+	private double execStartTime;
+
+	private double totalTime;
+	
+	public static final int CREATED = 0;
+
+	
+	public static final int READY = 1;
+
+
+	public static final int QUEUED = 2;
+
+	
+	public static final int INEXEC = 3;
+
+
+	public static final int SUCCESS = 4;
+
+
+	public static final int FAILED = 5;
+
+	public static final int CANCELED = 6;
+
+	
+	public static final int PAUSED = 7;
+
+
+	public static final int RESUMED = 8;
+
+	public static final int FAILED_RESOURCE_UNAVAILABLE = 9;
+
+	protected int vmId;
+	
+	
+
+//	public Task(
+//			final int taskId,
+//			final long taskLength
+//
+//
+//			) {
+//		this(
+//				taskId,
+//				taskLength,
+//				false
+//
+//				);
+//		vmId = -1;
+//		
+//	}
+
+	
+	public Task(
+			final int taskId,
+			final long tasktLength,
+			final double totalTime
+			) {
+		       // to be set by a Broker or user
+		status = CREATED;
+		this.taskId = taskId;
+		
+		execStartTime = 	System.currentTimeMillis();
+		finishTime = -1.0;  
+		this.totalTime = totalTime;
+		this.taskLength = Math.max(1, taskLength);
+		
+		index = -1;
+		
+		vmId = -1;
+		
+
+	}
+
+
+	public boolean setCloudletLength(final long cloudletLength) {
+		if (cloudletLength <= 0) {
+			return false;
+		}
+
+		this.taskLength = cloudletLength;
+		return true;
+	}
+
+
+	
+	/**
+	 * Checks whether this Cloudlet has finished execution or not.
+	 * 
+	 * @return <tt>true</tt> if this Cloudlet has finished execution, <tt>false</tt> otherwise
+	 * @pre $none
+	 * @post $none
+	 */
+	public boolean isFinished() {
+		if ((System.currentTimeMillis() - execStartTime) < totalTime) {
+			return false;
+		}
+
+		else
+		{
+			status = SUCCESS;
+			finishTime = System.currentTimeMillis();
+			return true;
+		}
+	}
+	
+	
+
+
+	public static String getStatusString(final int status) {
+		String statusString = null;
+		switch (status) {
+			case Task.CREATED:
+				statusString = "Created";
+				break;
+
+			case Task.READY:
+				statusString = "Ready";
+				break;
+
+			case Task.INEXEC:
+				statusString = "InExec";
+				break;
+
+			case Task.SUCCESS:
+				statusString = "Success";
+				break;
+
+			case Task.QUEUED:
+				statusString = "Queued";
+				break;
+
+			case Task.FAILED:
+				statusString = "Failed";
+				break;
+
+			case Task.CANCELED:
+				statusString = "Canceled";
+				break;
+
+			case Task.PAUSED:
+				statusString = "Paused";
+				break;
+
+			case Task.RESUMED:
+				statusString = "Resumed";
+				break;
+
+			case Task.FAILED_RESOURCE_UNAVAILABLE:
+				statusString = "Failed_resource_unavailable";
+				break;
+
+			default:
+				break;
+		}
+
+		return statusString;
+	}
+
+	/**
+	 * Gets the length of this Cloudlet.
+	 * 
+	 * @return the length of this Cloudlet
+	 * @pre $none
+	 * @post $result >= 0.0
+	 */
+	public long getTaskLength() {
+		return taskLength;
+	}
+
+
+	
+	public double getFinishTime() {
+		return finishTime;
+	}
+
+	// //////////////////////// PROTECTED METHODS //////////////////////////////
+
+	
+	public int getTaskId() {
+		return taskId;
+	}
+
+	public int getVmId() {
+		
+		return vmId;
+	}
+
+	
+	public void setVmId(final int vmId) {
+		status = QUEUED;
+		this.vmId = vmId;
+	}
+
+
+
+}
+
+
+
