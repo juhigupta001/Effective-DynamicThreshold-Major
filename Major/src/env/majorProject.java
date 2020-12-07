@@ -8,6 +8,8 @@ public class majorProject {
 	static Datacenter dc;
 	static Host h1, h2;
 	static ArrayList<Vm> vmList;
+	static ArrayList<Double> curr_util;
+	static ArrayList<Double> pred_util = new ArrayList<>();
 
 	public static void Createhost() {
 		System.out.println(
@@ -142,7 +144,90 @@ public class majorProject {
 		}
 
 	}
+	
+	public void currUtilisationPm()
+	{
 
+		//calculate curr_util array
+	
+	}
+	
+	public static void predict_utilisation()
+	{
+		//ArrayList<Double> curr_util = new ArrayList<>();
+		//curr_util.add((double) 200);
+		//curr_util.add((double) 400);
+		//curr_util.add((double) 100);
+		
+		
+			//mean
+			double Y_mean = 0;
+			for(int j=0;j<curr_util.size();j++)
+			{
+				Y_mean = Y_mean + curr_util.get(j);
+			}
+			
+			Y_mean  = Y_mean/curr_util.size();
+			
+			//variance
+			
+			double cov = 0;
+			for(int j=0;j<curr_util.size();j++)
+			{
+				cov = cov + (long)Math.pow((curr_util.get(j)-Y_mean), 2);
+			}
+			
+			cov = cov/(curr_util.size()-1);
+			
+			
+			
+			ArrayList<Double> acc_List = new ArrayList<>();
+			
+			for(int j=0;j<curr_util.size();j++)
+			{
+
+				double Y_h = 0;
+				
+				for(int i=j+1;i<curr_util.size();i++)
+				{
+					Y_h = Y_h + (curr_util.get(i)-Y_mean)*(curr_util.get(i-j)-Y_mean);
+				}
+				Y_h = Y_h/curr_util.size();
+				
+				double acc = Y_h/cov;
+				
+				acc_List.add(Math.abs(acc));
+			}
+			
+			System.out.println(acc_List);
+			
+			//predict utilization
+			
+			pred_util.add(curr_util.get(0));
+			
+			for(int i=1;i<curr_util.size();i++)
+			{
+				double predictedVal = 0;
+				
+				for(int j=0;j<i;j++)
+				{
+				
+					predictedVal = predictedVal + curr_util.get(j)*acc_List.get(j);
+					
+				}
+				pred_util.add(predictedVal);
+				
+			}
+			
+			System.out.println(pred_util);
+		
+	}
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
