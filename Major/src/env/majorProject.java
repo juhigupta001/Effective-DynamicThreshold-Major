@@ -10,6 +10,8 @@ public class majorProject {
 	static ArrayList<Vm> vmList;
 	static ArrayList<Double> curr_util;
 	static ArrayList<Double> pred_util = new ArrayList<>();
+	static ArrayList<Double> P_temp = new ArrayList<>();
+	static ArrayList<Double> C_temp = new ArrayList<>();
 
 	public static void Createhost() {
 		System.out.println(
@@ -222,6 +224,26 @@ public class majorProject {
 			System.out.println(pred_util);
 		
 	}
+	
+		
+	public static void calculateP_temp()
+	{
+				
+		for(int i=0;i<curr_util.size();i++)
+		{
+			double ptemp = pred_util.get(i)-curr_util.get(i);
+			P_temp.add(ptemp);
+		}
+	}
+	
+	public static void calculateC_temp()
+	{
+				
+		//calculate C_temp
+	}
+	
+	
+
 	
 	
 	
