@@ -12,7 +12,7 @@ public class Task {
 	private long taskLength;
 
 	//in MIPS
-	private final int taskId;
+	private  int taskId;
 
 
 	private int status;
@@ -56,39 +56,21 @@ public class Task {
 	protected int vmId;
 
 	
-	
-
-//	public Task(
-//			final int taskId,
-//			final long taskLength
-//
-//
-//			) {
-//		this(
-//				taskId,
-//				taskLength,
-//				false
-//
-//				);
-//		vmId = -1;
-//		
-//	}
 
 	
 	public Task(
-			final int taskId,
-			final long tasktLength,
-			final double totalTime
+			 int id,
+			 long taskLength,
+			 double time
 			) {
 		       // to be set by a Broker or user
 		status = CREATED;
-		this.taskId = taskId;
-		
+		this.taskId = id;
 		execStartTime = 	System.currentTimeMillis();
 		finishTime = -1.0;  
-		this.totalTime = totalTime;
+		this.totalTime = time;
 		this.taskLength = Math.max(1, taskLength);
-		
+		//System.out.println(this.taskLength);
 		index = -1;
 		
 		vmId = -1;
