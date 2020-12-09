@@ -365,9 +365,8 @@ public class majorProject {
 		ArrayList<Double> dmw[][] = new ArrayList[n][2];
 		DecimalFormat df2 = new DecimalFormat("#.####");
 		double max1 = 0, min1 = 0, max2 = 0, min2 = 0;
-		float wtDecisionMatrixC1[][] = new float[noOfVM][2];
-		float wtDecisionMatrixC2[][] = new float[noOfVM][2];
-
+		double wtDecisionMatrix[][]=new double[noOfVM][2];
+		
 		int id1 = 0, id2 = 0, id3 = 0, id4 = 0;
 		System.out.println("FUZZY DECISION MATRIX WEIGHTED");
 		System.out.println("C1                          C2");
@@ -379,8 +378,9 @@ public class majorProject {
 					double t = 0;
 					if (j == 0) {
 						t = l1.get(k) * c1.get(k);
-						wtDecisionMatrixC1[i][j] = (float) (t / 10000) * 10000;
-						System.out.print(wtDecisionMatrixC1[i][j]+"	 ");
+						//System.out.print(df2.format(t)+"hiii");
+						System.out.print(t+" ");
+						wtDecisionMatrix[i][j]=t;
 						if (k == l1.size() - 1 && t > max1) {
 							max1 = t;
 							id1 = i;
@@ -393,8 +393,7 @@ public class majorProject {
 					}
 					if (j == 1) {
 						t = l1.get(k) * c2.get(k);
-						wtDecisionMatrixC2[i][j]=(float) (t / 10000) * 10000;
-						System.out.print(wtDecisionMatrixC2[i][j]+"	 ");
+						System.out.print(df2.format(t) + " ");
 						if (k == l1.size() - 1 && t > max2) {
 							max2 = t;
 							id3 = i;
@@ -415,14 +414,14 @@ public class majorProject {
 		System.out.println("-------------");
 
 		// print
-//		for (int i = 0; i < decisionMatrix.length; i++) {
-//			for (int j = 0; j < 2; j++) {
-//				System.out.print(dmlvar[i][j] + " ");
-//			}
-//			System.out.println();
-//
-//		}
-		//
+		for (int i = 0; i < decisionMatrix.length; i++) {
+			for (int j = 0; j < 2; j++) {
+				System.out.print(dmlvar[i][j] + " ");
+			}
+			System.out.println();
+
+		}
+		
 
 	}
 

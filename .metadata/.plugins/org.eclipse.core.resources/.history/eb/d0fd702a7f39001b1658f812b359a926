@@ -78,6 +78,7 @@ public class Task {
 
 	}
 
+
 	public boolean setCloudletLength(final long cloudletLength) {
 		if (cloudletLength <= 0) {
 			return false;
@@ -87,6 +88,15 @@ public class Task {
 		return true;
 	}
 
+
+	
+	/**
+	 * Checks whether this Cloudlet has finished execution or not.
+	 * 
+	 * @return <tt>true</tt> if this Cloudlet has finished execution, <tt>false</tt> otherwise
+	 * @pre $none
+	 * @post $none
+	 */
 	public boolean isFinished() {
 		if ((System.currentTimeMillis() - execStartTime) < totalTime) {
 			return false;
@@ -99,6 +109,8 @@ public class Task {
 			return true;
 		}
 	}
+	
+	
 
 
 	public static String getStatusString(final int status) {

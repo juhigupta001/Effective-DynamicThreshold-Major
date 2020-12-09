@@ -380,7 +380,7 @@ public class majorProject {
 					if (j == 0) {
 						t = l1.get(k) * c1.get(k);
 						wtDecisionMatrixC1[i][j] = (float) (t / 10000) * 10000;
-						System.out.print(wtDecisionMatrixC1[i][j]+"	 ");
+						System.out.print(wtDecisionMatrixC1[i][j]+"		");
 						if (k == l1.size() - 1 && t > max1) {
 							max1 = t;
 							id1 = i;
@@ -394,7 +394,7 @@ public class majorProject {
 					if (j == 1) {
 						t = l1.get(k) * c2.get(k);
 						wtDecisionMatrixC2[i][j]=(float) (t / 10000) * 10000;
-						System.out.print(wtDecisionMatrixC2[i][j]+"	 ");
+						System.out.print(wtDecisionMatrixC2[i][j]+"		");
 						if (k == l1.size() - 1 && t > max2) {
 							max2 = t;
 							id3 = i;
