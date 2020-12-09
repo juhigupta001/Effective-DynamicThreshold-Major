@@ -379,8 +379,8 @@ public class majorProject {
 					double t = 0;
 					if (j == 0) {
 						t = l1.get(k) * c1.get(k);
-						wtDecisionMatrixC1[i][k] = (float) (t / 10000) * 10000;
-
+						wtDecisionMatrixC1[i][j] = (float) (t / 10000) * 10000;
+						System.out.print(wtDecisionMatrixC1[i][j]+"	hiii ");
 						if (k == l1.size() - 1 && t > max1) {
 							max1 = t;
 							id1 = i;
@@ -393,8 +393,8 @@ public class majorProject {
 					}
 					if (j == 1) {
 						t = l1.get(k) * c2.get(k);
-						wtDecisionMatrixC2[i][k] = (float) (t / 10000) * 10000;
-
+						wtDecisionMatrixC2[i][j]=(float) (t / 10000) * 10000;
+						System.out.print(wtDecisionMatrixC2[i][j]+"	 ");
 						if (k == l1.size() - 1 && t > max2) {
 							max2 = t;
 							id3 = i;
@@ -407,24 +407,12 @@ public class majorProject {
 					temp.add(t);
 				}
 				dmw[i][j] = temp;
-
-			}
-
-		}
-		System.out.println("-------DECISION MATRIX C1------");
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < 3; j++) {
-				System.out.print(wtDecisionMatrixC1[i][j] + "     ");
+				System.out.print("     ");
 			}
 			System.out.println();
+
 		}
-		System.out.println("-------DECISION MATRIX C2------");
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < 3; j++) {
-				System.out.print(wtDecisionMatrixC2[i][j] + "     ");
-			}
-			System.out.println();
-		}
+		System.out.println("-------------");
 
 		// print
 //		for (int i = 0; i < decisionMatrix.length; i++) {
@@ -435,37 +423,24 @@ public class majorProject {
 //
 //		}
 		//
-		// Calculation of output matrix using Composition
+		//Calculation of output matrix using Composition
 		double comp[] = new double[n];
 		double min11 = 0;
 		double min21 = 0;
-		for (int i = 0; i < n; i++) {
-
-			min11 = Math.min(Math.min(wtDecisionMatrixC2[i][0], wtDecisionMatrixC1[i][1]), wtDecisionMatrixC1[i][2]);
-			min21 = Math.min(Math.min(wtDecisionMatrixC2[i][0], wtDecisionMatrixC2[i][1]), wtDecisionMatrixC2[i][2]);
-			comp[i] = Math.max(min11, min2);
-
-		}
-		////////Calculation of output matrix
-		System.out.println("-------OUTPUT MATRIX--------");
-		for (int i = 0; i < comp.length; i++) {
-			double temp = (comp[i] / 10000) * 10000;
-			System.out.println(temp);
-		}
-		
-		//////Calcullation of Crisp Value
-		System.out.println("--------Crisp-----------");
-		double crisp = 0;
 		for(int i=0;i<n;i++)
 		{
-			crisp = crisp + comp[i];
+			
+				min11 = Math.min(Math.min(wtDecisionMatrixC2[i][0],wtDecisionMatrixC1[i][1]), wtDecisionMatrixC1[i][2]);
+				min21 = Math.min(Math.min(wtDecisionMatrixC2[i][0],wtDecisionMatrixC2[i][1]), wtDecisionMatrixC2[i][2]);
+				comp[i] = Math.max(min11, min2);
+			
 		}
+		System.out.println("-------OUTPUT MATRIX--------");
+		for(int i=0;i<comp.length;i++)
+			System.out.print(comp[i]+" ");
 		
-		crisp = crisp/5;
-		System.out.println("Factor ="+crisp);
 
 	}
-	
 
 	private static HashMap<String, ArrayList<Double>> triangularMembershipFunction() {
 		HashMap<String, ArrayList<Double>> map = new HashMap<>();

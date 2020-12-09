@@ -655,3 +655,20 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.amazonaws.eclipse.core 1 0 2020-12-09 14:31:38.245
 !MESSAGE Found valid identity id cache us-east-1:825b73b1-f0d8-4039-bae5-ca35369529b4
+
+!ENTRY com.amazonaws.eclipse.lambda 4 0 2020-12-09 15:26:08.494
+!MESSAGE Failed to launch SAM Local.
+!STACK 0
+com.amazonaws.eclipse.core.exceptions.AwsActionException: The project must be a Maven project with a pom.xml file in the root!
+	at com.amazonaws.eclipse.lambda.launching.SamLocalDelegate.launch(SamLocalDelegate.java:159)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:860)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:719)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1017)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1220)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.IllegalArgumentException: The project must be a Maven project with a pom.xml file in the root!
+	at com.amazonaws.eclipse.core.util.MavenBuildLauncher.validateParameters(MavenBuildLauncher.java:131)
+	at com.amazonaws.eclipse.core.util.AbstractApplicationLauncher.launchAsync(AbstractApplicationLauncher.java:51)
+	at com.amazonaws.eclipse.core.util.AbstractApplicationLauncher.launch(AbstractApplicationLauncher.java:60)
+	at com.amazonaws.eclipse.lambda.launching.SamLocalDelegate.launch(SamLocalDelegate.java:100)
+	... 5 more

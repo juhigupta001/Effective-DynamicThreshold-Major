@@ -446,26 +446,13 @@ public class majorProject {
 			comp[i] = Math.max(min11, min2);
 
 		}
-		////////Calculation of output matrix
 		System.out.println("-------OUTPUT MATRIX--------");
 		for (int i = 0; i < comp.length; i++) {
 			double temp = (comp[i] / 10000) * 10000;
 			System.out.println(temp);
 		}
-		
-		//////Calcullation of Crisp Value
-		System.out.println("--------Crisp-----------");
-		double crisp = 0;
-		for(int i=0;i<n;i++)
-		{
-			crisp = crisp + comp[i];
-		}
-		
-		crisp = crisp/5;
-		System.out.println("Factor ="+crisp);
 
 	}
-	
 
 	private static HashMap<String, ArrayList<Double>> triangularMembershipFunction() {
 		HashMap<String, ArrayList<Double>> map = new HashMap<>();

@@ -462,7 +462,7 @@ public class majorProject {
 		}
 		
 		crisp = crisp/5;
-		System.out.println("Factor ="+crisp);
+		System.out.println(crisp);
 
 	}
 	

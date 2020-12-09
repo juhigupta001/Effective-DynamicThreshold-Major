@@ -414,14 +414,14 @@ public class majorProject {
 		System.out.println("-------DECISION MATRIX C1------");
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < 3; j++) {
-				System.out.print(wtDecisionMatrixC1[i][j] + "     ");
+				System.out.print(wtDecisionMatrixC1[i][j] + "   ");
 			}
 			System.out.println();
 		}
 		System.out.println("-------DECISION MATRIX C2------");
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < 3; j++) {
-				System.out.print(wtDecisionMatrixC2[i][j] + "     ");
+				System.out.print(wtDecisionMatrixC2[i][j] + "   ");
 			}
 			System.out.println();
 		}
@@ -446,26 +446,11 @@ public class majorProject {
 			comp[i] = Math.max(min11, min2);
 
 		}
-		////////Calculation of output matrix
 		System.out.println("-------OUTPUT MATRIX--------");
-		for (int i = 0; i < comp.length; i++) {
-			double temp = (comp[i] / 10000) * 10000;
-			System.out.println(temp);
-		}
-		
-		//////Calcullation of Crisp Value
-		System.out.println("--------Crisp-----------");
-		double crisp = 0;
-		for(int i=0;i<n;i++)
-		{
-			crisp = crisp + comp[i];
-		}
-		
-		crisp = crisp/5;
-		System.out.println("Factor ="+crisp);
+		for (int i = 0; i < comp.length; i++)
+			System.out.print(comp[i] + " ");
 
 	}
-	
 
 	private static HashMap<String, ArrayList<Double>> triangularMembershipFunction() {
 		HashMap<String, ArrayList<Double>> map = new HashMap<>();
