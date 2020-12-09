@@ -1,21 +1,24 @@
 package env;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class majorProject {
+	
 	static Datacenter dc;
 	static Host h1, h2;
 	static ArrayList<Vm> vmList;
-	static ArrayList<Double> curr_util;
+	static ArrayList<Double> curr_util = new ArrayList<>();
 	static ArrayList<Double> pred_util = new ArrayList<>();
-<<<<<<< HEAD
+
 	static int noOfVM;
-=======
+	static double currentUtilization[][];
 	static ArrayList<Double> P_temp = new ArrayList<>();
 	static ArrayList<Double> C_temp = new ArrayList<>();
->>>>>>> fa9bf8945db12ddca797cdf6889437213c179980
+	
+	static double decisionMatrix[][];
 
 	public static void Datacentre() {
 		System.out.println(
@@ -159,7 +162,7 @@ public class majorProject {
 		q.add(new Task(10, 55, 1000));
 
 		AllocateTask(q);
-		double currentUtilization[][] = new double[noOfVM][noOfVM];
+	 currentUtilization = new double[noOfVM][noOfVM];
 		for (int vm = 0; vm < noOfVM; vm++) {
 			for (int t = 0; t < noOfVM; t++) {
 				double taskCompleted = gettaskCompleted(vm, t);
@@ -180,75 +183,97 @@ public class majorProject {
 
 	}
 
-	public void currUtilisationPm() {
+	public static void currUtilisationPm()
+	{
 
-		// calculate curr_util array
-
-	}
-
-	public static void predict_utilisation() {
-		// ArrayList<Double> curr_util = new ArrayList<>();
-		// curr_util.add((double) 200);
-		// curr_util.add((double) 400);
-		// curr_util.add((double) 100);
-
-		// mean
-		double Y_mean = 0;
-		for (int j = 0; j < curr_util.size(); j++) {
-			Y_mean = Y_mean + curr_util.get(j);
-		}
-
-		Y_mean = Y_mean / curr_util.size();
-
-		// variance
-
-		double cov = 0;
-		for (int j = 0; j < curr_util.size(); j++) {
-			cov = cov + (long) Math.pow((curr_util.get(j) - Y_mean), 2);
-		}
-
-		cov = cov / (curr_util.size() - 1);
-
-		ArrayList<Double> acc_List = new ArrayList<>();
-
-		for (int j = 0; j < curr_util.size(); j++) {
-
-			double Y_h = 0;
-
-			for (int i = j + 1; i < curr_util.size(); i++) {
-				Y_h = Y_h + (curr_util.get(i) - Y_mean) * (curr_util.get(i - j) - Y_mean);
+		//calculate curr_util array
+		for(int i=0;i<currentUtilization.length;i++)
+		{
+			double sum = 0;
+			for(int j=0;j<currentUtilization[i].length;j++)
+			{
+				sum = sum + currentUtilization[i][j];
 			}
-			Y_h = Y_h / curr_util.size();
-
-			double acc = Y_h / cov;
-
-			acc_List.add(Math.abs(acc));
+			curr_util.add(sum);
 		}
-
-		System.out.println(acc_List);
-
-		// predict utilization
-
-		pred_util.add(curr_util.get(0));
-
-		for (int i = 1; i < curr_util.size(); i++) {
-			double predictedVal = 0;
-
-			for (int j = 0; j < i; j++) {
-
-				predictedVal = predictedVal + curr_util.get(j) * acc_List.get(j);
-
-			}
-			pred_util.add(predictedVal);
-
-		}
-
-		System.out.println(pred_util);
-
+		
+	System.out.println("-------------------------Current Utilisation of PM 1-------------------------------");
+	System.out.println(curr_util);
+	
 	}
-<<<<<<< HEAD
+	
+	public static void predict_utilisation()
+	{
+		//ArrayList<Double> curr_util = new ArrayList<>();
+		//curr_util.add((double) 200);
+		//curr_util.add((double) 400);
+		//curr_util.add((double) 100);
+		
+		
+			//mean
+			double Y_mean = 0;
+			for(int j=0;j<curr_util.size();j++)
+			{
+				Y_mean = Y_mean + curr_util.get(j);
+			}
+			
+			Y_mean  = Y_mean/curr_util.size();
+			
+			//variance
+			
+			double cov = 0;
+			for(int j=0;j<curr_util.size();j++)
+			{
+				cov = cov + (long)Math.pow((curr_util.get(j)-Y_mean), 2);
+			}
+			
+			cov = cov/(curr_util.size()-1);
+			
+			
+			
+			ArrayList<Double> acc_List = new ArrayList<>();
+			
+			for(int j=0;j<curr_util.size();j++)
+			{
 
-=======
+				double Y_h = 0;
+				
+				for(int i=j+1;i<curr_util.size();i++)
+				{
+					Y_h = Y_h + (curr_util.get(i)-Y_mean)*(curr_util.get(i-j)-Y_mean);
+				}
+				Y_h = Y_h/curr_util.size();
+				
+				double acc = Y_h/cov;
+				
+				acc_List.add(Math.abs(acc));
+			}
+			
+			System.out.println(acc_List);
+			
+			//predict utilization
+			
+			pred_util.add(curr_util.get(0));
+			
+			for(int i=1;i<curr_util.size();i++)
+			{
+				double predictedVal = 0;
+				
+				for(int j=0;j<i;j++)
+				{
+				
+					predictedVal = predictedVal + curr_util.get(j)*acc_List.get(j);
+					
+				}
+				pred_util.add(predictedVal);
+				
+			}
+			System.out.println("-------------------------Predicted Utilisation of PM 1-------------------------------");
+			
+			
+			System.out.println(pred_util);
+		
+	}
 	
 		
 	public static void calculateP_temp()
@@ -259,29 +284,184 @@ public class majorProject {
 			double ptemp = pred_util.get(i)-curr_util.get(i);
 			P_temp.add(ptemp);
 		}
+		System.out.println(P_temp);
 	}
 	
 	public static void calculateC_temp()
 	{
 				
 		//calculate C_temp
+		
+		for(int i=0;i<curr_util.size();i++)
+		{
+			double val = 200;
+			C_temp.add(val+100*i);
+		}
+	}
+
+	public static void decisionMatrix()
+	{
+		decisionMatrix = new double[curr_util.size()][2];
+		
+		double maxc1 = Double.MIN_VALUE;
+		Double minc1 = Double.MAX_VALUE;
+		Double maxc2 = Double.MIN_VALUE;
+		Double minc2 = Double.MAX_VALUE;
+
+		
+		for(int i=0;i<curr_util.size();i++)
+		{
+			decisionMatrix[i][0] = P_temp.get(i);
+			decisionMatrix[i][1] = C_temp.get(i);
+			
+			maxc1 = Math.max(maxc1, decisionMatrix[i][0]);
+			minc1 = Math.min(minc1, decisionMatrix[i][0]);
+			maxc2 = Math.max(maxc2, decisionMatrix[i][1]);
+			minc2 = Math.min(minc2, decisionMatrix[i][1]);
+			
+		}
+		
+		int newmax = 1;
+		int newmin = 0;
+		double dif1 = maxc1 - minc1;
+		double dif2 = maxc2 - minc2;
+			
+		//normalised dm
+		for (int i = 0; i < decisionMatrix.length; i++) {
+			double x = decisionMatrix[i][0];
+			double y = decisionMatrix[i][1];
+			decisionMatrix[i][0] = (((x - minc1) / dif1) * (newmax - newmin)) - newmin;
+			decisionMatrix[i][1] = (((y - minc2) / dif2) * (newmax - newmin)) - newmin;
+			
+
+		}
+		
+		/// Triangular Membership function
+		HashMap<String, ArrayList<Double>> func = triangularMembershipFunction();
+
+		/////// DECISION MATRIX WITH LINGUISTIC VARIABLES
+		String dmlvar[][] = new String[decisionMatrix.length][2];
+		for (int i = 0; i < decisionMatrix.length; i++) {
+			for (int j = 0; j < 2; j++) {
+				double val = decisionMatrix[i][j];
+				dmlvar[i][j] = search(val, func);
+
+			}
+		}
+	
+///////// DECISION MATRIX WITH FUZZY TRIANGULAR MEMBERSHIP FUNCTION
+		HashMap<String, Integer> freq1 = new HashMap<>();
+		HashMap<String, Integer> freq2 = new HashMap<>();
+
+		System.out.println("DECISION MATRIX WITH FUZZY TRIANGULAR MEMBERSHIP FUNCTION");
+		System.out.println("C1                          C2");
+		String str1 = "", str2 = "";
+		int maxlen1 = 0, maxlen2 = 0;
+		for (int i = 0; i < decisionMatrix.length; i++) {
+			String s1 = dmlvar[i][0];
+			String s2 = dmlvar[i][1];
+			System.out.println(func.get(s1) + "        " + func.get(s2));
+			freq1.put(s1, freq1.getOrDefault(s1, 0) + 1);
+			freq2.put(s2, freq2.getOrDefault(s2, 0) + 1);
+			if (freq1.get(s1) > maxlen1) {
+				maxlen1 = freq1.get(s1);
+				str1 = s1;
+			}
+			freq2.put(s1, freq2.getOrDefault(s1, 0) + 1);
+			if (freq2.get(s2) > maxlen2) {
+				maxlen2 = freq2.get(s1);
+				str2 = s2;
+			}
+
+		}
+
+		
+		
+		//print
+		for (int i = 0; i < decisionMatrix.length; i++) {
+			for(int j=0;j<2;j++)
+			{
+				System.out.print(dmlvar[i][j]+" ");
+			}
+			System.out.println();
+			
+
+		}
+		
+		
+	}
+	
+	private static HashMap<String, ArrayList<Double>> triangularMembershipFunction() {
+		HashMap<String, ArrayList<Double>> map = new HashMap<>();
+		ArrayList<Double> list;
+		list = new ArrayList<>();
+		list.add(0.0);
+		list.add(0.10);
+		list.add(0.25);
+		map.put("VL", list);
+		list = new ArrayList<>();
+		list.add(0.15);
+		list.add(0.30);
+		list.add(0.45);
+		map.put("L", list);
+		list = new ArrayList<>();
+		list.add(0.35);
+		list.add(0.50);
+		list.add(0.65);
+		map.put("M", list);
+		list = new ArrayList<>();
+		list.add(0.55);
+		list.add(0.70);
+		list.add(0.85);
+		map.put("H", list);
+		list = new ArrayList<>();
+		list.add(0.75);
+		list.add(0.90);
+		list.add(1.0);
+		map.put("VH", list);
+		System.out.println("Triangular Membership Function Used");
+		for (String val : map.keySet()) {
+			System.out.println(val + " -> " + map.get(val));
+		}
+		System.out.println("----------");
+
+		return map;
+
 	}
 	
 	
+	private static String search(double k, HashMap<String, ArrayList<Double>> map) {
+		for (String val : map.keySet()) {
+			ArrayList<Double> list = map.get(val);
+			if (k >= list.get(0) && k <= list.get(2))
+				return val;
+		}
+		return "";
+
+	}
 
 	
 	
 	
-	
-	
-	
->>>>>>> fa9bf8945db12ddca797cdf6889437213c179980
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		Datacentre();
+		
 		CreateHost();
+		
 		CreateVm();
+	//	AllocateTask(Queue<Task> q);
+		
+	//	gettaskCompleted(int vm, int t);
+		
 		CalculateCurrentUtilization();
-
+		System.out.println();
+		currUtilisationPm();
+		System.out.println();
+		predict_utilisation();
+		calculateP_temp();
+		calculateC_temp();
+		decisionMatrix();
 	}
 }
