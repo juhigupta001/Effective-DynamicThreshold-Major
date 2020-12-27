@@ -18,7 +18,7 @@ public class majorProject {
 	static double currentUtilization[][];
 	static ArrayList<Double> P_temp = new ArrayList<>();
 	static ArrayList<Double> C_temp = new ArrayList<>();
-	static double old_thres = 100;
+
 	static double decisionMatrix[][];
 
 	public static void Datacentre() {
@@ -146,6 +146,8 @@ public class majorProject {
 		q.add(new Task(10, 55, 1000));
 
 		AllocateTask(q);
+
+		currentUtilization = new double[noOfVM][noOfVM];
 
 		currentUtilization = new double[noOfVM][noOfVM];
 
@@ -448,12 +450,8 @@ public class majorProject {
 			crisp = crisp + comp[i];
 		}
 
-		crisp = (crisp / 5) * 10;
+		crisp = (crisp / 5)*10;
 		System.out.println(crisp);
-		//// Calculation Of new Threshold
-		System.out.println("-------New Threshold Obtained--------");
-		double new_thresh = old_thres - crisp;
-		System.out.println(new_thresh);
 	}
 
 	private static HashMap<String, ArrayList<Double>> triangularMembershipFunction() {
@@ -503,6 +501,8 @@ public class majorProject {
 		return "";
 
 	}
+
+//
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

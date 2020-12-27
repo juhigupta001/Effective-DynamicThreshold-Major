@@ -672,3 +672,159 @@ Caused by: java.lang.IllegalArgumentException: The project must be a Maven proje
 	at com.amazonaws.eclipse.core.util.AbstractApplicationLauncher.launch(AbstractApplicationLauncher.java:60)
 	at com.amazonaws.eclipse.lambda.launching.SamLocalDelegate.launch(SamLocalDelegate.java:100)
 	... 5 more
+!SESSION 2020-12-09 15:51:52.030 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=1.8.0_271
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-12-09 15:52:08.574
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Computers . Com'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-09 15:52:10.188
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-09 15:52:10.953
+!MESSAGE Monitoring content of C:\Users\Computers . Com\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-09 15:52:12.015
+!MESSAGE AWS toolkit core plugin initialized after 1826 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-09 15:52:12.185
+!MESSAGE Found valid identity id cache us-east-1:825b73b1-f0d8-4039-bae5-ca35369529b4
+!SESSION 2020-12-09 15:59:08.131 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=1.8.0_271
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-12-09 15:59:26.005
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Computers . Com'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-09 15:59:27.341
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-09 15:59:27.975
+!MESSAGE Monitoring content of C:\Users\Computers . Com\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-09 15:59:28.905
+!MESSAGE AWS toolkit core plugin initialized after 1564 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-09 15:59:29.093
+!MESSAGE Found valid identity id cache us-east-1:825b73b1-f0d8-4039-bae5-ca35369529b4
+!SESSION 2020-12-10 10:56:12.142 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=1.8.0_271
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-12-10 10:57:21.999
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Computers . Com'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 10:57:23.712
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 10:57:24.385
+!MESSAGE Monitoring content of C:\Users\Computers . Com\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 10:57:25.523
+!MESSAGE AWS toolkit core plugin initialized after 1810 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 10:57:26.038
+!MESSAGE Found valid identity id cache us-east-1:825b73b1-f0d8-4039-bae5-ca35369529b4
+!SESSION 2020-12-10 13:45:29.436 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=1.8.0_271
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-12-10 13:45:55.647
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Computers . Com'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 13:45:57.369
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 13:45:58.162
+!MESSAGE Monitoring content of C:\Users\Computers . Com\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 13:45:58.909
+!MESSAGE AWS toolkit core plugin initialized after 1541 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 13:45:59.298
+!MESSAGE Found valid identity id cache us-east-1:825b73b1-f0d8-4039-bae5-ca35369529b4
+!SESSION 2020-12-10 15:44:59.200 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=1.8.0_271
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-12-10 15:45:36.202
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Computers . Com'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 15:45:39.403
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 15:45:41.960
+!MESSAGE Monitoring content of C:\Users\Computers . Com\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 15:45:43.168
+!MESSAGE AWS toolkit core plugin initialized after 3766 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 15:45:43.480
+!MESSAGE Found valid identity id cache us-east-1:825b73b1-f0d8-4039-bae5-ca35369529b4
+!SESSION 2020-12-10 18:22:41.423 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=1.8.0_271
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-12-10 18:23:01.682
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Computers . Com'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 18:23:03.169
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 18:23:03.829
+!MESSAGE Monitoring content of C:\Users\Computers . Com\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 18:23:04.804
+!MESSAGE AWS toolkit core plugin initialized after 1636 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2020-12-10 18:23:04.956
+!MESSAGE Found valid identity id cache us-east-1:825b73b1-f0d8-4039-bae5-ca35369529b4

@@ -19,6 +19,7 @@ public class Vm {
 	protected Host host;
 
 	private List<Task> totalTasks;
+	int valu = 2;
 
 	public Vm(int id, double mips, int ram, long bw, long size) {
 		setId(id);
@@ -48,8 +49,8 @@ public class Vm {
 	}
 
 	protected int getTimeSinceVmRunning() {
-		int val=(int)(System.currentTimeMillis() - execStartTime);
-		return 2;
+		int val = (int) (System.currentTimeMillis() - execStartTime);
+		return valu;
 	}
 
 	protected long getTotalTaskLength() {

@@ -149,6 +149,8 @@ public class majorProject {
 
 		currentUtilization = new double[noOfVM][noOfVM];
 
+		currentUtilization = new double[noOfVM][noOfVM];
+
 		for (int vm = 0; vm < noOfVM; vm++) {
 			for (int t = 0; t < noOfVM; t++) {
 				double taskCompleted = gettaskCompleted(vm, t);
@@ -503,6 +505,8 @@ public class majorProject {
 		return "";
 
 	}
+
+//
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
